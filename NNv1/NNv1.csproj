@@ -44,19 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IActivation.cs" />
+    <Compile Include="Activators\IActivation.cs" />
     <Compile Include="Layer.cs" />
-    <Compile Include="ExClasses\LayerEx.cs" />
-    <Compile Include="LayerHelper.cs" />
+    <Compile Include="Trainers\ExClasses\LayerEx.cs" />
+    <Compile Include="Trainers\SGDTrainer\LayerHelper.cs" />
     <Compile Include="NeuralNetwork.cs" />
-    <Compile Include="ExClasses\NeuralNetworkTrainerEx.cs" />
-    <Compile Include="NeuralNetworkTrainer.cs" />
-    <Compile Include="ExClasses\NeuronEx.cs" />
+    <Compile Include="Trainers\ExClasses\NeuralNetworkTrainerEx.cs" />
+    <Compile Include="Trainers\SGDTrainer\NeuralNetworkTrainer.cs" />
+    <Compile Include="Trainers\ExClasses\NeuronEx.cs" />
     <Compile Include="Neuron.cs" />
-    <Compile Include="NeuronHelper.cs" />
+    <Compile Include="Trainers\SGDTrainer\NeuronHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Relu.cs" />
-    <Compile Include="Sigmoid.cs" />
+    <Compile Include="Activators\Relu.cs" />
+    <Compile Include="Activators\Sigmoid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

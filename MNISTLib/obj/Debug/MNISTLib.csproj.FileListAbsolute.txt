@@ -9,3 +9,9 @@ F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\MNISTL
 F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\MNISTLib\obj\Debug\MNISTLib.csproj.CoreCompileInputs.cache
 F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\MNISTLib\obj\Debug\MNISTLib.dll
 F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\MNISTLib\obj\Debug\MNISTLib.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\MNISTLib\bin\Debug\MNISTLib.dll
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\MNISTLib\bin\Debug\MNISTLib.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\MNISTLib\obj\Debug\MNISTLib.csprojAssemblyReference.cache
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\MNISTLib\obj\Debug\MNISTLib.csproj.CoreCompileInputs.cache
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\MNISTLib\obj\Debug\MNISTLib.dll
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\MNISTLib\obj\Debug\MNISTLib.pdb

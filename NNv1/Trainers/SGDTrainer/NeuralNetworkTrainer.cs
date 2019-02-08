@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace NNv1
 {
+    /// <summary>
+    /// A class wich trains a Neural Network based on Stochastic Gradient Descent
+    /// The equations of the algorithm are from the resource:
+    /// http://neuralnetworksanddeeplearning.com/chap1.html
+    /// </summary>
     public class NeuralNetworkTrainer
     {
-
+        // the layers containing the gradient of the previous update to the neural network
+        // stored for applying momentum to the learning
         private LayerHelper[] prevLayers;
 
         public NeuralNetworkTrainer(NeuralNetwork nn)
@@ -72,16 +78,16 @@ namespace NNv1
             return errorValue / miniBatch.Length;
         }
 
-        public static LayerHelper[] Backprop(NeuralNetwork nn, double[] x, double[] y)
+        public static LayerHelper[] Backprop(NeuralNetwork nn, double[] input, double[] targetOutput)
         {
             // handle errors
             if (nn.Layers == null || nn.Layers.Length < 2)
                 throw new ArgumentException("invalid neural network", "original");
 
-            if (nn.Layers[0].Neurons.Length != x.Length)
+            if (nn.Layers[0].Neurons.Length != input.Length)
                 throw new ArgumentException("nerual network input and x mismatch", "original");
 
-            if (nn.Layers[nn.Layers.Length - 1].Neurons.Length != y.Length)
+            if (nn.Layers[nn.Layers.Length - 1].Neurons.Length != targetOutput.Length)
                 throw new ArgumentException("nerual network output and y mismatch", "original");
 
 
@@ -91,8 +97,8 @@ namespace NNv1
             // Input x: Set the corresponding activation a1 for the input layer.
             for (int i = 0; i < nn.Layers[0].Neurons.Length; i++)
             {
-                nn.Layers[0].Neurons[i].Value = x[i];
-                layerHelpers[0].Neurons[i].A = x[i];
+                nn.Layers[0].Neurons[i].Output = input[i];
+                layerHelpers[0].Neurons[i].A = input[i];
             }
 
             // Feedforward: For each l=2,3,…,L compute zl=wla(l−1)+bl and al=σ(zl).
@@ -103,13 +109,13 @@ namespace NNv1
                     double total = 0;
                     for (int k = 0; k < nn.Layers[i].Neurons[j].Weights.Length; k++)
                     {
-                        total += nn.Layers[i - 1].Neurons[k].Value * nn.Layers[i].Neurons[j].Weights[k];
+                        total += nn.Layers[i - 1].Neurons[k].Output * nn.Layers[i].Neurons[j].Weights[k];
                     }
                     total += nn.Layers[i].Neurons[j].Bias;
                     layerHelpers[i].Neurons[j].Z = total; // Z of helper
                     total = nn.Layers[i].Activation.Activate(total);
                     layerHelpers[i].Neurons[j].A = total; // A = σ(z)
-                    nn.Layers[i].Neurons[j].Value = total;
+                    nn.Layers[i].Neurons[j].Output = total;
                 }
             }
 
@@ -119,7 +125,7 @@ namespace NNv1
             for (int i = 0; i < layerHelpers[L].Neurons.Length; i++)
             {
                 layerHelpers[L].Neurons[i].Delta =
-                    CostPrime(layerHelpers[L].Neurons[i].A, y[i])
+                    CostPrime(layerHelpers[L].Neurons[i].A, targetOutput[i])
                     * nn.Layers[L].Activation.ActivatePrime(layerHelpers[L].Neurons[i].Z);
 
                 // Output: The gradient of the cost function is given by ∂C∂wljk=al−1kδlj and ∂C∂blj=δlj.
@@ -167,15 +173,15 @@ namespace NNv1
             return output - y;
         }
 
-        private static double Cost(double[] output, double[] y)
+        private static double Cost(double[] output, double[] targetOutput)
         {
-            if (output.Length != y.Length)
+            if (output.Length != targetOutput.Length)
                 throw new ArgumentException("Cannot compute error. NN output and y dims mismatch", "original");
 
             double total = 0;
             for (int i = 0; i < output.Length; i++)
             {
-                total += (output[i] - y[i]) * (output[i] - y[i]);
+                total += (output[i] - targetOutput[i]) * (output[i] - targetOutput[i]);
             }
 
             return total / 2;
@@ -190,9 +196,9 @@ namespace NNv1
                 NeuronHelper[] neurons = new NeuronHelper[nn.Layers[i].Neurons.Length];
                 for (int j = 0; j < nn.Layers[i].Neurons.Length; j++)
                 {
-                    neurons[j] = new NeuronHelper(nn.Layers[i].Neurons[j].PrevLayerSize);
+                    neurons[j] = new NeuronHelper(nn.Layers[i].Neurons[j].InputCount);
                 }
-                layerHelpers[i] = new LayerHelper(neurons, nn.Layers[i].PrevLayerSize);
+                layerHelpers[i] = new LayerHelper(neurons);
             }
 
             return layerHelpers;

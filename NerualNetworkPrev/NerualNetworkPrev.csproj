@@ -64,7 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controller\Manager.cs" />
+    <Compile Include="Controller\ExManager.cs" />
+    <Compile Include="Controller\IManager.cs" />
+    <Compile Include="Controller\SGDManager.cs" />
     <Compile Include="Model\Models.cs" />
     <Compile Include="Views\BinaryPage.xaml.cs">
       <DependentUpon>BinaryPage.xaml</DependentUpon>

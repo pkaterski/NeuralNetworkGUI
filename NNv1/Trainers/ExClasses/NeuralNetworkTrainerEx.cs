@@ -34,12 +34,10 @@ namespace NNv1
             this.nn = nn;
         }
 
-
-
-        //***public double RunEpoch((double[], double[])[] miniBatch, double eta)
-        public double UpdateMiniBatch((double[], double[])[] miniBatch, double eta)
+        public double UpdateMiniBatch((double[], double[])[] miniBatch, double eta, double momentum)
         {
-            this.learningRate = eta;
+            learningRate = eta;
+            Momentum = momentum;
             double error = 0.0;
 
             foreach (var data in miniBatch)
@@ -173,30 +171,17 @@ namespace NNv1
             LayerEx layerEx;
 
 
-
-            // layer's weights updates
-            //double[][] layerWeightsUpdates;
-            // layer's thresholds updates
-            //double[] layerBiasUpdates;
-            // neuron's weights updates
-            //double[] neuronWeightUpdates;
-
             // for each layer of the network
             for (int i = 1; i < nn.Layers.Length; i++)
             {
                 layer = nn.Layers[i];
                 layerEx = layerHelpersEx[i - 1];
 
-                //layerWeightsUpdates = weightsUpdates[i];
-                //layerBiasUpdates = thresholdsUpdates[i];
-
                 // for each neuron of the layer
                 for (int j = 0; j < layer.Neurons.Length; j++)
                 {
                     neuron = layer.Neurons[j] as Neuron;
                     neuronEx = layerEx.NeuronsEx[j];
-
-                    //neuronWeightUpdates = layerWeightsUpdates[j];
 
                     // for each weight of the neuron
                     for (int k = 0; k < neuron.Weights.Length; k++)

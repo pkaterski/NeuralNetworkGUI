@@ -22,7 +22,12 @@ namespace NNv1
             Sigmoid sigmoid = new Sigmoid();
             Random r = new Random();
 
-            Layers[0] = new Layer(sizes[0], 0, r, rScale, sigmoid);
+            Layers[0] = new Layer(sizes[0], 0, r, 0, null);
+            for (int i = 0; i < Layers[0].Neurons.Length; i++)
+            {
+                Layers[0].Neurons[i].Bias = 0;
+            }
+
             for (int i = 1; i < sizes.Length; i++)
             {
                 Layers[i] = new Layer(sizes[i], sizes[i - 1], r, rScale, sigmoid);
@@ -43,13 +48,13 @@ namespace NNv1
             }
         }
 
-        public NeuralNetwork(int[] sizes, Random r, double rScale)
+        public NeuralNetwork(int[] sizes, Random r, double scale = 1)
         {
             Layers = new Layer[sizes.Length];
 
             IActivation sigmoid = new Sigmoid();
 
-            Layers[0] = new Layer(sizes[0], 0, r, rScale, sigmoid);
+            Layers[0] = new Layer(sizes[0], 0, r, scale, sigmoid);
 
             for (int i = 0; i < Layers[0].Neurons.Length; i++)
             {
@@ -58,7 +63,7 @@ namespace NNv1
 
             for (int i = 1; i < sizes.Length; i++)
             {
-                Layers[i] = new Layer(sizes[i], sizes[i - 1], r, rScale, sigmoid);
+                Layers[i] = new Layer(sizes[i], sizes[i - 1], r, scale, sigmoid);
             }
         }
 
@@ -73,7 +78,7 @@ namespace NNv1
 
             for (int i = 0; i < input.Length; i++)
             {
-                Layers[0].Neurons[i].Value = input[i];
+                Layers[0].Neurons[i].Output = input[i];
             }
 
             double[] result = new double[Layers.Length];
@@ -88,11 +93,11 @@ namespace NNv1
                     double total = 0;
                     for (int k = 0; k < Layers[i - 1].Neurons.Length; k++)
                     {
-                        total += Layers[i - 1].Neurons[k].Value * Layers[i].Neurons[j].Weights[k];
+                        total += Layers[i - 1].Neurons[k].Output * Layers[i].Neurons[j].Weights[k];
                     }
                     total += Layers[i].Neurons[j].Bias;
                     total = Layers[i].Activation.Activate(total);
-                    Layers[i].Neurons[j].Value = total;
+                    Layers[i].Neurons[j].Output = total;
                 }
             }
 

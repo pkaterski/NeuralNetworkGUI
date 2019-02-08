@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 namespace NNv1
 {
     // a helper class for storing the data necessary for learning
-    public // a helper class for storing the data necessary for learning
-    class NeuronHelper
+    public class NeuronHelper
     {
         public double Delta { get; set; }
         public double A { get; set; }
         public double Z { get; set; }
         public double DB { get; set; } // ∂C∂b
         public double[] DW { get; set; } // ∂C∂wk
-        public int PrevLayerSize
+
+        public int InputCount
         {
             get
             {
@@ -43,9 +43,9 @@ namespace NNv1
 
         public NeuronHelper(NeuronHelper n) : this(n.Delta, n.A, n.Z, n.DB, n.DW) { }
 
-        public NeuronHelper(int prevLayerSize)
+        public NeuronHelper(int inputCount)
         {
-            DW = new double[prevLayerSize];
+            DW = new double[inputCount];
         }
 
     }

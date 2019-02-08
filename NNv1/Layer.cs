@@ -8,8 +8,6 @@ namespace NNv1
 {
     public class Layer
     {
-        private int prevLayerSize;
-
         public IActivation Activation { get; set; }
 
         public Neuron[] Neurons { get; set; }
@@ -21,15 +19,9 @@ namespace NNv1
                 else return 0;
             }
         }
-        public int PrevLayerSize
-        {
-            get { return prevLayerSize; }
-            set { prevLayerSize = value >= 0 ? value : 0; }
-        }
 
         public Layer(int size, int prevLayerSize, Random r, double rScale, IActivation activation)
         {
-            PrevLayerSize = prevLayerSize;
             Neurons = new Neuron[size];
             for (int i = 0; i < size; i++)
             {
@@ -45,7 +37,6 @@ namespace NNv1
             {
                 Neurons[i] = new Neuron(neurons[i]);
             }
-            PrevLayerSize = prevLayerSize;
             Activation = activation;
         }
 
@@ -54,7 +45,7 @@ namespace NNv1
             double[] result = new double[Size];
             for (int i = 0; i < Size; i++)
             {
-                result[i] = Neurons[i].Value;
+                result[i] = Neurons[i].Output;
             }
             return result;
         }

@@ -9,9 +9,9 @@ namespace NNv1
     public class LayerHelper
     {
 
-        private int prevLayerSize;
-
         public NeuronHelper[] Neurons { get; set; }
+
+        // the number of neurons in the layer
         public int Size
         {
             get
@@ -20,20 +20,14 @@ namespace NNv1
                 else return 0;
             }
         }
-        public int PrevLayerSize
-        {
-            get { return prevLayerSize; }
-            set { prevLayerSize = value >= 0 ? value : 0; }
-        }
 
-        public LayerHelper(NeuronHelper[] neurons, int prevLayerSize)
+        public LayerHelper(NeuronHelper[] neurons)
         {
             Neurons = new NeuronHelper[neurons.Length];
             for (int i = 0; i < Neurons.Length; i++)
             {
                 Neurons[i] = new NeuronHelper(neurons[i]);
             }
-            PrevLayerSize = prevLayerSize;
         }
 
         public LayerHelper() { }

@@ -15,3 +15,12 @@ F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NNv1\o
 F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NNv1\obj\Debug\NNv1.csproj.CopyComplete
 F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NNv1\obj\Debug\NNv1.dll
 F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NNv1\obj\Debug\NNv1.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\bin\Debug\NNv1.dll
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\bin\Debug\NNv1.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\bin\Debug\System.ValueTuple.dll
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\bin\Debug\System.ValueTuple.xml
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\obj\Debug\NNv1.csprojAssemblyReference.cache
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\obj\Debug\NNv1.csproj.CoreCompileInputs.cache
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\obj\Debug\NNv1.csproj.CopyComplete
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\obj\Debug\NNv1.dll
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NNv1\obj\Debug\NNv1.pdb

@@ -27,7 +27,7 @@ namespace NeuralNetworkPrev.Views
     {
         private (double[], double[])[] data;
         private NeuralNetwork nn;
-        private Manager manager;
+        private SGDManager manager;
 
         bool isTraining = false;
 
@@ -44,12 +44,14 @@ namespace NeuralNetworkPrev.Views
             InitializeComponent();
 
             nn = new NeuralNetwork(new int[] { 2, 2, 1 }, 0.7);
-            manager = new Manager(nn);
+            manager = new SGDManager(nn);
 
             bw = new BackgroundWorker();
             bw.WorkerSupportsCancellation = true;
             bw.DoWork += bw_DoWork;
             bw.RunWorkerCompleted += bw_RunWorkerComplited;
+
+            lblNN.Content = nn;
         }
 
         private void bw_RunWorkerComplited(object sender, RunWorkerCompletedEventArgs e)
@@ -73,7 +75,10 @@ namespace NeuralNetworkPrev.Views
                 itteration++;
 
                 System.Threading.Thread.Sleep(1);
-                err = manager.UpdateMiniBatch(nn, data, eta, momentum);
+                //err = manager.UpdateMiniBatch(nn, data, eta, momentum);
+                manager.eta = eta;
+                manager.momentum = momentum;
+                err = manager.Train(data);
                 ShowError shower = new ShowError(DisplayError);
                 lblError.Dispatcher.BeginInvoke(shower, err);
 
@@ -130,10 +135,10 @@ namespace NeuralNetworkPrev.Views
             double res10 = nn.Forward(data[2].Item1)[0];
             double res11 = nn.Forward(data[3].Item1)[0];
 
-            lblOutput00.Content = string.Format("{0:N4}", res00);
-            lblOutput01.Content = string.Format("{0:N4}", res01);
-            lblOutput10.Content = string.Format("{0:N4}", res10);
-            lblOutput11.Content = string.Format("{0:N4}", res11);
+            lblOutput00.Content = string.Format("{0:N0}    ({0:N2})", res00);
+            lblOutput01.Content = string.Format("{0:N0}    ({0:N2})", res01);
+            lblOutput10.Content = string.Format("{0:N0}    ({0:N2})", res10);
+            lblOutput11.Content = string.Format("{0:N0}    ({0:N2})", res11);
         }
 
         private void RadBtnOr_Checked(object sender, RoutedEventArgs e)
@@ -149,6 +154,13 @@ namespace NeuralNetworkPrev.Views
         private void RadBtnXor_Checked(object sender, RoutedEventArgs e)
         {
             data = Models.GetBinaryData(2);
+        }
+
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            nn = new NeuralNetwork(new int[] { 2, 2, 1 }, 0.7);
+            manager = new SGDManager(nn);
+            lblNN.Content = nn;
         }
     }
 }

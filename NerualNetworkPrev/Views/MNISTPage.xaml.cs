@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace NeuralNetworkPrev.Views
 {
@@ -28,7 +30,7 @@ namespace NeuralNetworkPrev.Views
     {
         private MNISTCore data;
         private NeuralNetwork nn;
-        private Manager manager;
+        private ExManager manager;
 
         private double eta;
         private double momentum;
@@ -53,6 +55,10 @@ namespace NeuralNetworkPrev.Views
             bw.WorkerSupportsCancellation = true;
             bw.DoWork += bw_DoWork;
             bw.RunWorkerCompleted += bw_RunWorkerComplited;
+
+            // add relative path
+            string projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            txtBoxPath.Text = Path.GetFullPath(projectFolder +  @"\..\data\");
         }
 
         private void bw_RunWorkerComplited(object sender, RunWorkerCompletedEventArgs e)
@@ -67,13 +73,6 @@ namespace NeuralNetworkPrev.Views
             int mismatched = trainSize;
             int itteration = 0;
 
-            double eta = 3.2;
-            double momentum = 0.1;
-
-            NeuralNetworkTrainerEx trainerEx = new NeuralNetworkTrainerEx(nn);
-            eta = 0.5;
-            trainerEx.LearningRate = eta;
-            trainerEx.Momentum = momentum;
             int maxMismatched = 20;
             double errorLimit = 5.0;
 
@@ -87,9 +86,9 @@ namespace NeuralNetworkPrev.Views
 
                 itteration++;
 
-
-                //err = manager.UpdateMiniBatch(nn, PrepareMiniBatch(), eta, momentum);
-                err = trainerEx.UpdateMiniBatch(PrepareMiniBatch(), eta);
+                manager.eta = eta;
+                manager.momentum = momentum;
+                err = manager.Train(PrepareMiniBatch());
 
                 mismatched = GetMismatched();
 
@@ -249,7 +248,8 @@ namespace NeuralNetworkPrev.Views
                     lblTestLabel.Content = data.TestImages[currTestIndex].Label;
                     PreviewImage(data.TestImages[currTestIndex], txtBlockDisplay);
                 }
-                PreviewTestImage();
+                if (nnIsCreated)
+                    PreviewTestImage();
             }
         }
 
@@ -265,7 +265,8 @@ namespace NeuralNetworkPrev.Views
                     lblTestLabel.Content = data.TestImages[currTestIndex].Label;
                     PreviewImage(data.TestImages[currTestIndex], txtBlockDisplay);
                 }
-                PreviewTestImage();
+                if (nnIsCreated)
+                    PreviewTestImage();
             }
         }
 
@@ -319,10 +320,10 @@ namespace NeuralNetworkPrev.Views
                 }
 
                 double factor = 0.0357142857142857;
-                factor = 1.0 / 75;
+                //factor = 1.0 / 75;
 
                 nn = new NeuralNetwork(sizes, new Random(), factor, activations);
-                manager = new Manager(nn);
+                manager = new ExManager(nn);
 
                 lblNNStatus.Content = "NN Created!";
 
@@ -342,16 +343,16 @@ namespace NeuralNetworkPrev.Views
         private void PreviewTestImage()
         {
             double[] res = nn.Forward(data.TestImages[currTestIndex].RawImage);
-            lblNNOut0.Content = string.Format("{0:N5}", res[0]);
-            lblNNOut1.Content = string.Format("{0:N5}", res[1]);
-            lblNNOut2.Content = string.Format("{0:N5}", res[2]);
-            lblNNOut3.Content = string.Format("{0:N5}", res[3]);
-            lblNNOut4.Content = string.Format("{0:N5}", res[4]);
-            lblNNOut5.Content = string.Format("{0:N5}", res[5]);
-            lblNNOut6.Content = string.Format("{0:N5}", res[6]);
-            lblNNOut7.Content = string.Format("{0:N5}", res[7]);
-            lblNNOut8.Content = string.Format("{0:N5}", res[8]);
-            lblNNOut9.Content = string.Format("{0:N5}", res[9]);
+            lblNNOut0.Content = string.Format("{0:N2}", res[0]);
+            lblNNOut1.Content = string.Format("{0:N2}", res[1]);
+            lblNNOut2.Content = string.Format("{0:N2}", res[2]);
+            lblNNOut3.Content = string.Format("{0:N2}", res[3]);
+            lblNNOut4.Content = string.Format("{0:N2}", res[4]);
+            lblNNOut5.Content = string.Format("{0:N2}", res[5]);
+            lblNNOut6.Content = string.Format("{0:N2}", res[6]);
+            lblNNOut7.Content = string.Format("{0:N2}", res[7]);
+            lblNNOut8.Content = string.Format("{0:N2}", res[8]);
+            lblNNOut9.Content = string.Format("{0:N2}", res[9]);
 
             lblTestNN.Content = NNPredict(data.TestImages[currTestIndex].RawImage);
         }
@@ -369,15 +370,13 @@ namespace NeuralNetworkPrev.Views
             {
                 try
                 {
-                    //eta = Convert.ToDouble(txtBoxEta.Text);
-                    //momentum = Convert.ToDouble(txtBoxMomentum.Text);
-
                     eta = double.Parse(txtBoxEta.Text, CultureInfo.InvariantCulture);
-                    momentum = double.Parse(txtBoxEta.Text, CultureInfo.InvariantCulture);
+                    momentum = double.Parse(txtBoxMomentum.Text, CultureInfo.InvariantCulture);
                 }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.ToString(), "Alert", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
 
                 isTraining = true;

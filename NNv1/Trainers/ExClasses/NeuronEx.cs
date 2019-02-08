@@ -31,7 +31,7 @@ namespace NNv1
 
         public NeuronEx(Neuron neuron)
         {
-            inputCount = neuron.PrevLayerSize;
+            inputCount = neuron.InputCount;
             Weights = new double[inputCount];
             WeightsDelta = new double[inputCount];
             for (int i = 0; i < inputCount; i++)
@@ -41,7 +41,7 @@ namespace NNv1
             }
 
             Bias = neuron.Bias;
-            this.output = neuron.Value;
+            this.output = neuron.Output;
 
         }
 

@@ -10,7 +10,7 @@
 
     <Canvas Background="#ff3030">
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="206" Stroke="Black" VerticalAlignment="Top" Width="268" Canvas.Left="722" Canvas.Top="268"/>
-        <StackPanel Height="402" Canvas.Left="10" Canvas.Top="29" Width="225">
+        <StackPanel Height="445" Canvas.Left="10" Canvas.Top="29" Width="225">
             <StackPanel Orientation="Vertical" Height="102" Margin="0,0,68.032,0">
                 <Label Content="Operation" VerticalContentAlignment="Top"/>
                 <RadioButton x:Name="radBtnOr" Content="OR" GroupName="Operaion" Margin="13,3,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="RadBtnOr_Checked"/>
@@ -36,6 +36,7 @@
                 <Label x:Name="lblError" MinWidth="72" VerticalContentAlignment="Center" Background="AliceBlue" Width="113"/>
             </StackPanel>
             <Button x:Name="btnTrain" Click="BtnTrain_Click" Content="Train" Margin="3,20,63.024,0" Height="42"/>
+            <Button x:Name="btnRefresh" Click="BtnRefresh_Click" Content="Refresh" Margin="3,20,63.024,0" Height="42"/>
         </StackPanel>
         <StackPanel Height="238" Canvas.Left="722" Canvas.Top="25" Width="310">
             <StackPanel Height="36" Orientation="Horizontal" Margin="0,0,10.344,0">

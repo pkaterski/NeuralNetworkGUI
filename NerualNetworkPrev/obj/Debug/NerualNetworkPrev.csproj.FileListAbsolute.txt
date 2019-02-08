@@ -58,7 +58,6 @@ C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\Sy
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\MNISTLib.pdb
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NNv1.pdb
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\System.ValueTuple.xml
-C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csprojAssemblyReference.cache
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\MainWindow.g.cs
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\BinaryPage.g.cs
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\MNISTPage.g.cs
@@ -75,3 +74,4 @@ C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Ne
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.CopyComplete
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.exe
 C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csprojAssemblyReference.cache

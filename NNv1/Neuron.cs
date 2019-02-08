@@ -10,8 +10,9 @@ namespace NNv1
     {
         public double[] Weights { get; set; }
         public double Bias { get; set; }
-        public double Value { get; set; }
-        public int PrevLayerSize
+        public double Output { get; set; }
+
+        public int InputCount
         {
             get
             {
@@ -25,23 +26,29 @@ namespace NNv1
         }
 
         /// <summary>
-        /// Constructor which generates random values
+        /// Constructor which generates random values of the weights and biases of the neuron
+        /// scaled at some value
         /// </summary>
-        /// <param name="prevLayerSize">The Sizes of the previous layer</param>
+        /// <param name="inputCount">The number of inputs in the neuron</param>
         /// <param name="r">A random object for generating random numbers</param>
-        /// <param name="rScale">The scale at which the weights will be initiallized</param>
-        public Neuron(int prevLayerSize, Random r, double rScale)
+        /// <param name="scale">The scale at which the weights will be initiallized</param>
+        public Neuron(int inputCount, Random r, double scale = 1)
         {
-            Weights = new double[prevLayerSize];
-            for (int i = 0; i < prevLayerSize; i++)
+            Weights = new double[inputCount];
+            for (int i = 0; i < inputCount; i++)
             {
-                Weights[i] = r.NextDouble() * rScale;
+                Weights[i] = r.NextDouble() * scale;
             }
 
             Bias = r.NextDouble();
-            Value = 0;
+            Output = 0;
         }
 
+        /// <summary>
+        /// Constructor which manually sets the weights and biases
+        /// </summary>
+        /// <param name="weights"></param>
+        /// <param name="bias"></param>
         public Neuron(double[] weights, double bias)
         {
             Weights = new double[weights.Length];
@@ -52,6 +59,10 @@ namespace NNv1
             Bias = bias;
         }
 
+        /// <summary>
+        /// Copy constructor
+        /// </summary>
+        /// <param name="neuron"></param>
         public Neuron(Neuron neuron) : this(neuron.Weights, neuron.Bias)
         { }
     }
