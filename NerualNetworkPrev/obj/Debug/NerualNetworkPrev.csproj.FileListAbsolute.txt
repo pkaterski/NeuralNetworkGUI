@@ -1,0 +1,77 @@
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.exe.config
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.exe
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.pdb
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csprojAssemblyReference.cache
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\MainWindow.g.cs
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\App.g.cs
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev_MarkupCompile.cache
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev_MarkupCompile.lref
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\MainWindow.baml
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.g.resources
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.Properties.Resources.resources
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.GenerateResource.cache
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.CoreCompileInputs.cache
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.exe
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.pdb
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\BinaryPage.g.cs
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\MNISTPage.g.cs
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\BinaryPage.baml
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\MNISTPage.baml
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\System.ValueTuple.dll
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\System.ValueTuple.xml
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.CopyComplete
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\MNISTLib.dll
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\MNISTLib.pdb
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NNv1.dll
+C:\Users\par_k\source\repos\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NNv1.pdb
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csprojAssemblyReference.cache
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\MainWindow.g.cs
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\BinaryPage.g.cs
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\MNISTPage.g.cs
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\App.g.cs
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev_MarkupCompile.cache
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev_MarkupCompile.lref
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.exe.config
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.exe
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.pdb
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\MNISTLib.dll
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NNv1.dll
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\System.ValueTuple.dll
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\MNISTLib.pdb
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\System.ValueTuple.xml
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\MainWindow.baml
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\BinaryPage.baml
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\MNISTPage.baml
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.g.resources
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.Properties.Resources.resources
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.GenerateResource.cache
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.CoreCompileInputs.cache
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.CopyComplete
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.exe
+F:\VS 2017 Projects\MyNeuroOCR\Student\Version 06-02-19\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.exe.config
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.exe
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NerualNetworkPrev.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\MNISTLib.dll
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NNv1.dll
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\System.ValueTuple.dll
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\MNISTLib.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\NNv1.pdb
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\bin\Debug\System.ValueTuple.xml
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csprojAssemblyReference.cache
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\MainWindow.g.cs
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\BinaryPage.g.cs
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\MNISTPage.g.cs
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\App.g.cs
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev_MarkupCompile.cache
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev_MarkupCompile.lref
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\MainWindow.baml
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\BinaryPage.baml
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\Views\MNISTPage.baml
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.g.resources
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.Properties.Resources.resources
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.GenerateResource.cache
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.CoreCompileInputs.cache
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.csproj.CopyComplete
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.exe
+C:\Users\par_k\OneDrive\Desktop\NerualNetworkPrev\NerualNetworkPrev\obj\Debug\NerualNetworkPrev.pdb

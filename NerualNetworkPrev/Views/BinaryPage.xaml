@@ -1,0 +1,74 @@
+﻿<Page x:Class="NeuralNetworkPrev.Views.BinaryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NeuralNetworkPrev.Views"
+      mc:Ignorable="d" 
+       d:DesignHeight="530" d:DesignWidth="1044"
+      Title="BinaryPage">
+
+    <Canvas Background="#ff3030">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="206" Stroke="Black" VerticalAlignment="Top" Width="268" Canvas.Left="722" Canvas.Top="268"/>
+        <StackPanel Height="402" Canvas.Left="10" Canvas.Top="29" Width="225">
+            <StackPanel Orientation="Vertical" Height="102" Margin="0,0,68.032,0">
+                <Label Content="Operation" VerticalContentAlignment="Top"/>
+                <RadioButton x:Name="radBtnOr" Content="OR" GroupName="Operaion" Margin="13,3,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True" Checked="RadBtnOr_Checked"/>
+                <RadioButton x:Name="radBtnAnd" Content="AND" GroupName="Operaion" Margin="13,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadBtnAnd_Checked"/>
+                <RadioButton x:Name="radBtnXor" Content="XOR" GroupName="Operaion" Margin="13,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="RadBtnXor_Checked"/>
+            </StackPanel>
+            <StackPanel Height="152" Margin="0,0,51.024,0">
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                    <Label Content="learning rate:" Margin="0,0,5,0"/>
+                    <TextBox x:Name="txtBoxEta" MinWidth="50" VerticalContentAlignment="Center" MaxLength="6" Width="77" Text="2"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                    <Label Content="momentum:" Margin="0,0,11,0"/>
+                    <TextBox x:Name="txtBoxMomentum" MinWidth="50" VerticalContentAlignment="Center" MaxLength="6" Width="77" Text="0.6"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,30,0,5">
+                    <Label Content="Stop at Error:" Margin="0,0,6,0"/>
+                    <TextBox x:Name="txtBoxErrorBreak" MinWidth="72" VerticalContentAlignment="Center" MaxLength="10" Width="77" Text="0.001"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,5">
+                <Label Content="Error:" Margin="0,0,11,0"/>
+                <Label x:Name="lblError" MinWidth="72" VerticalContentAlignment="Center" Background="AliceBlue" Width="113"/>
+            </StackPanel>
+            <Button x:Name="btnTrain" Click="BtnTrain_Click" Content="Train" Margin="3,20,63.024,0" Height="42"/>
+        </StackPanel>
+        <StackPanel Height="238" Canvas.Left="722" Canvas.Top="25" Width="310">
+            <StackPanel Height="36" Orientation="Horizontal" Margin="0,0,10.344,0">
+                <Label Content="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="⊙" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="=" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="33" Margin="3,0,0,3.152"/>
+                <Label x:Name="lblOutput00" Content="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="116" Margin="3,0,0,3.152"/>
+            </StackPanel>
+            <StackPanel Height="36" Orientation="Horizontal" Margin="0,0,10.344,0">
+                <Label Content="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="⊙" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="=" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="33" Margin="3,0,0,3.152"/>
+                <Label x:Name="lblOutput01" Content="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="116" Margin="3,0,0,3.152"/>
+            </StackPanel>
+            <StackPanel Height="36" Orientation="Horizontal" Margin="0,0,10.344,0">
+                <Label Content="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="⊙" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="=" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="33" Margin="3,0,0,3.152"/>
+                <Label x:Name="lblOutput10" Content="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="116" Margin="3,0,0,3.152"/>
+            </StackPanel>
+            <StackPanel Height="36" Orientation="Horizontal" Margin="0,0,10.344,0">
+                <Label Content="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="⊙" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="33" Margin="3,0,0,3.152"/>
+                <Label Content="=" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="33" Margin="3,0,0,3.152"/>
+                <Label x:Name="lblOutput11" Content="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="AliceBlue" Width="116" Margin="3,0,0,3.152"/>
+            </StackPanel>
+            <Button x:Name="btnTest" Click="BtnTest_Click" Content="Test" Margin="2,15,46.272,0" Height="35"/>
+        </StackPanel>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="449" Stroke="Black" VerticalAlignment="Top" Width="423" Canvas.Left="240" Canvas.Top="25"/>
+        <Label x:Name="lblNN" Content="" Canvas.Left="290" Canvas.Top="67"/>
+    </Canvas>
+</Page>

@@ -1,0 +1,17 @@
+﻿<Window x:Class="NeuralNetworkPrev.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NeuralNetworkPrev"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="Nerual Network Controller" Height="600" Width="1054">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
+            <Button x:Name="btnNavBinary" Content="Binary Operations" MinWidth="120" Margin="10,2,0,2" Click="BtnNavBinary_Click"></Button>
+            <Button x:Name="btnNavMnist" Content="MNIST" MinWidth="120" Margin="10,2,0,2" Click="BtnNavMnist_Click"></Button>
+        </StackPanel>
+        <Frame x:Name="MainFrame" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
