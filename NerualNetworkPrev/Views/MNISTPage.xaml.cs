@@ -30,7 +30,7 @@ namespace NeuralNetworkPrev.Views
     {
         private MNISTCore data;
         private NeuralNetwork nn;
-        private ExManager manager;
+        private SGDManager manager;
 
         private double eta;
         private double momentum;
@@ -323,7 +323,7 @@ namespace NeuralNetworkPrev.Views
                 //factor = 1.0 / 75;
 
                 nn = new NeuralNetwork(sizes, new Random(), factor, activations);
-                manager = new ExManager(nn);
+                manager = new SGDManager(nn);
 
                 lblNNStatus.Content = "NN Created!";
 

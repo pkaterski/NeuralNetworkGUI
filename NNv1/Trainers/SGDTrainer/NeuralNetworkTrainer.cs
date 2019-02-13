@@ -31,39 +31,40 @@ namespace NNv1
                 double[] x = data.Item1;
                 double[] y = data.Item2;
 
-                LayerHelper[] deltaNablaLayers = Backprop(nn, x, y);
+                //LayerHelper[] deltaNablaLayers = Backprop(nn, x, y);
+                nablaLayers = Backprop(nn, x, y);
 
-                for (int i = 0; i < nablaLayers.Length; i++)
+                //for (int i = 0; i < nablaLayers.Length; i++)
+                //{
+                //    for (int j = 0; j < nablaLayers[i].Neurons.Length; j++)
+                //    {
+                //        nablaLayers[i].Neurons[j].DB += deltaNablaLayers[i].Neurons[j].DB;
+                //        for (int k = 0; k < nablaLayers[i].Neurons[j].DW.Length; k++)
+                //        {
+                //            nablaLayers[i].Neurons[j].DW[k] += deltaNablaLayers[i].Neurons[j].DW[k];
+                //        }
+                //    }
+                //}
+
+                // update weights and biases
+                for (int i = 0; i < nn.Layers.Length; i++)
                 {
-                    for (int j = 0; j < nablaLayers[i].Neurons.Length; j++)
+                    for (int j = 0; j < nn.Layers[i].Neurons.Length; j++)
                     {
-                        nablaLayers[i].Neurons[j].DB += deltaNablaLayers[i].Neurons[j].DB;
-                        for (int k = 0; k < nablaLayers[i].Neurons[j].DW.Length; k++)
+                        nn.Layers[i].Neurons[j].Bias -= (1 - momentum) * nablaLayers[i].Neurons[j].DB * eta
+                            / 1 + momentum * prevLayers[i].Neurons[j].DB;
+
+                        // update the prevlayer
+                        prevLayers[i].Neurons[j].DB = nablaLayers[i].Neurons[j].DB * eta / 1;
+
+                        for (int k = 0; k < nn.Layers[i].Neurons[j].Weights.Length; k++)
                         {
-                            nablaLayers[i].Neurons[j].DW[k] += deltaNablaLayers[i].Neurons[j].DW[k];
+                            nn.Layers[i].Neurons[j].Weights[k] -= (1 - momentum) * nablaLayers[i].Neurons[j].DW[k] * eta
+                                / 1 + momentum * prevLayers[i].Neurons[j].DW[k];
+
+                            // update the prev layer
+                            prevLayers[i].Neurons[j].DW[k] = nablaLayers[i].Neurons[j].DW[k] * eta / 1;
                         }
-                    }
-                }
-            }
-
-            // update weights and biases
-            for (int i = 0; i < nn.Layers.Length; i++)
-            {
-                for (int j = 0; j < nn.Layers[i].Neurons.Length; j++)
-                {
-                    nn.Layers[i].Neurons[j].Bias -= nablaLayers[i].Neurons[j].DB * eta
-                        / miniBatch.Length + momentum * prevLayers[i].Neurons[j].DB;
-
-                    // update the prevlayer
-                    prevLayers[i].Neurons[j].DB = nablaLayers[i].Neurons[j].DB * eta / miniBatch.Length;
-
-                    for (int k = 0; k < nn.Layers[i].Neurons[j].Weights.Length; k++)
-                    {
-                        nn.Layers[i].Neurons[j].Weights[k] -= nablaLayers[i].Neurons[j].DW[k] * eta
-                            / miniBatch.Length + momentum * prevLayers[i].Neurons[j].DW[k];
-
-                        // update the prev layer
-                        prevLayers[i].Neurons[j].DW[k] = nablaLayers[i].Neurons[j].DW[k] * eta / miniBatch.Length;
                     }
                 }
             }

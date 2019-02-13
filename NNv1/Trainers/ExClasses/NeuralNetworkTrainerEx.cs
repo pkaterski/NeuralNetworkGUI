@@ -48,7 +48,7 @@ namespace NNv1
                 error += Run(inputs, targets);
 
             }
-            return error;
+            return error / miniBatch.Length;
         }
 
 
